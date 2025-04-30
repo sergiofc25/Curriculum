@@ -1,0 +1,266 @@
+﻿@page "/"
+@layout CvLayout
+@using MudBlazor
+<MudContainer Style="background-color: #FFF1D5;" MaxWidth="MaxWidth.Medium" Class="my-8">
+    <!-- Encabezado -->
+    <MudPaper Style="background-color: #BDDDE4;" Elevation="3" Class="pa-4 mb-6">
+        <MudGrid Justify="Justify.Center" Spacing="2">
+            <MudItem xs="12" md="4" Class="d-flex justify-center">
+                <div style="position: relative; width: 180px; height: 180px;">
+                    <MudAvatar Class="circle" Style="
+                    width: 100%;
+                    height: 100%;
+                    border: 3px solid var(--mud-palette-primary);
+                    overflow: hidden;">
+                        <MudImage Src="3.jpg" Style="
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;" />
+                    </MudAvatar>
+                </div>
+            </MudItem>
+            <MudItem xs="12" md="8">
+                <MudText Typo="Typo.h4" Class="text-center text-md-left">Sergio Fernández Cerna</MudText>
+                <MudText Typo="Typo.h6" Color="Color.Primary" Class="text-center text-md-left mb-2">
+                    Desarrollador Web .NET
+                </MudText>
+                <MudDivider Class="my-3" />
+                <MudStack Spacing="1">
+                    <MudText Class="d-flex align-center"><MudIcon Icon="@Icons.Material.Filled.LocationOn" Class="mr-2" /> Trujillo, Perú</MudText>
+                    <MudText Class="d-flex align-center"><MudIcon Icon="@Icons.Material.Filled.Email" Class="mr-2" /> serfercer2@gmail.com</MudText>
+                    <MudText Class="d-flex align-center"><MudIcon Icon="@Icons.Material.Filled.PhoneAndroid" Class="mr-2" /> 992298223</MudText>
+                    <MudLink Href="https://github.com/sergiofc25/" Class="d-flex align-center">
+                        <MudIcon Icon="@Icons.Custom.Brands.GitHub" Title="GitHub" />GitHub
+                    </MudLink>
+                </MudStack>
+            </MudItem>
+            <MudText Class="d-flex align-center">
+                Bachiller en Ingeniería de Sistemas Computacionales con experiencia en el desarrollo de
+                aplicaciones web backend utilizando C# .NET. Destaco por mi capacidad para resolver
+                problemas de manera eficiente, analizar datos y tomar decisiones informadas basadas en
+                resultados. Además, poseo una gran capacidad para aprender y dominar nuevas tecnologías y
+                herramientas, lo que me permite adaptarme rápidamente a los cambios y mejorar
+                continuamente mis habilidades técnicas.
+            </MudText>
+            <MudSpacer/>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       EndIcon="@Icons.Material.Filled.Download"
+                       Href="cv.pdf"
+                       Target="_blank"
+                       Class="mb-4"
+                       Download="Cv_Sergio_Fernández_Cerna.pdf">
+                PDF
+            </MudButton>
+        </MudGrid>
+    </MudPaper>
+    <!-- Sección de Habilidades -->
+    <MudExpansionPanel Style="background-color: #BDDDE4;" IsExpanded="true" Class="mb-4">
+        <MudText Typo="Typo.h6" Color="Color.Primary">Habilidades Técnicas</MudText>
+        <MudGrid Spacing="3" Class="mt-2">
+            @foreach (var skillcode in skillsCode)
+            {
+                <MudItem xs="6" sm="4" md="3">
+                    <MudChip Variant="Variant.Outlined"
+                             Color="Color.Primary"
+                             Class="ma-1"
+                             Icon="@Icons.Material.Filled.Code">
+                        @skillcode
+                    </MudChip>
+                </MudItem>
+            }
+        </MudGrid>
+    </MudExpansionPanel>
+    <!-- Sección de Experiencia -->
+    <MudExpansionPanel Style="background-color: #BDDDE4;"  Text="Experiencia Profesional" Class="mb-4" IsExpanded="true">
+        <MudText Typo="Typo.h6" Color="Color.Primary" Class="font-weight-bold">Experiencia Profesional</MudText>
+        <MudStack Spacing="4">
+            
+            <MudCard Elevation="3" Class="py-2" Style="width: 100%; background-color: #C7D9DD;">
+                <MudCardHeader>
+                    <MudList Dense="true">
+                        <MudListItem Class="px-0">
+                            <MudText Typo="Typo.h6">ASISTENTE DE DESARROLLO DE PROYECTOS Y SOPORTE TÉCNICO</MudText>
+                        </MudListItem>
+                        <MudListItem Class="px-0">
+                            <MudText Typo="Typo.subtitle2" Color="Color.Primary"> LEZAMA CONSULTORES DE SALUD OCUPACIONAL S.C.R.L. (octubre 2019 - febrero 2020)</MudText>
+                        </MudListItem>
+                    </MudList>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudList Dense="true">
+                        <MudListItem Class="px-0">
+                            <MudText>Practicante Pre Profesional encargado de apoyo en implementación de interfaces</MudText>
+                        </MudListItem>
+                        <MudListItem Class="px-0">
+                            <MudText>Soporte técnico</MudText>
+                        </MudListItem>
+                        <MudListItem Class="px-0">
+                            <MudText>Html, CSS, JavaScript</MudText>
+                        </MudListItem>
+                    </MudList>
+                </MudCardContent>
+            </MudCard>
+            
+            <MudCard Elevation="3" Class="py-2" Style="width: 100%; background-color: #C7D9DD;">
+                <MudCardHeader>
+                    <MudList Dense="true">
+                        <MudListItem Class="px-0">
+                            <MudText Typo="Typo.h6">DESARROLLADOR BACKEND .NET</MudText>
+                        </MudListItem>
+                        <MudListItem Class="px-0">
+                            <MudText Typo="Typo.subtitle2" Color="Color.Primary"> Proyecto Independiente (enero 2023 - mayo 2023) - (julio 2024 - noviembre 2024)</MudText>
+                        </MudListItem>
+                    </MudList>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudList Dense="true">
+                        <MudListItem Class="px-0">
+                            <MudText>Implementación de endpoints en la parte de back-end.</MudText>
+                        </MudListItem>
+                        <MudListItem Class="px-0">
+                            <MudText>Implementación de nuevas funcionalidades y Corrección errores.</MudText>
+                        </MudListItem>
+                        <MudListItem Class="px-0">
+                            <MudText>C#, .NET y MariaDB.</MudText>
+                        </MudListItem>
+                    </MudList>
+                </MudCardContent>
+            </MudCard>
+            
+        </MudStack>
+    </MudExpansionPanel>
+    <!--Portafolio-->
+    <MudPaper Style="background-color: #BDDDE4;" Elevation="3" Class="pa-4 mb-6">
+        <MudText Typo="Typo.h5" Color="Color.Primary" Class="font-weight-bold">Portafolio</MudText>
+        <MudText Class="font-weight-bold">Sistema de gestión y análisis de costos unitarios de proyectos de construcción</MudText>
+        <MudGrid Class="mt-2" Justify="Justify.FlexStart" Spacing="1">
+            <MudCarousel Class="mud-width-full" Style="height: auto; max-height: 500px; min-height: 300px;" TData="object" AutoCycle="false">
+                <MudCarouselItem Class="py-0" Transition="transition" Color="@Color.Transparent">
+                    <div class="d-flex justify-center align-center" style="height:100%; padding: 8px 0;" >
+                        <MudImage Src="/ImgPro/Pro01.png"
+                                  Fluid="true"
+                                  Class="h-100"
+                                  Style="object-fit: contain;"
+                                  Alt="Pro01" />
+                    </div>
+                </MudCarouselItem>
+                <MudCarouselItem Class="py-0" Transition="transition" Color="@Color.Transparent">
+                    <div class="d-flex justify-center align-center" style="height:100%;padding: 8px 0;">
+                        <MudImage Src="/ImgPro/Pro02.png"
+                                  Fluid="true"
+                                  Class="h-100"
+                                  Style="object-fit: contain;"
+                                  Alt="Pro02" />
+                    </div>
+                </MudCarouselItem>
+                <MudCarouselItem Class="py-0" Transition="transition" Color="@Color.Transparent">
+                    <div class="d-flex justify-center align-center" style="height:100%;padding: 8px 0;">
+                        <MudImage Src="/ImgPro/Pro03.png"
+                                  Fluid="true"
+                                  Class="h-100"
+                                  Style="object-fit: contain;"
+                                  Alt="Pro03" />
+                    </div>
+                </MudCarouselItem>
+                <MudCarouselItem Class="py-0" Transition="transition" Color="@Color.Transparent">
+                    <div class="d-flex justify-center align-center" style="height:100%;padding: 8px 0;">
+                        <MudImage Src="/ImgPro/Pro04.png"
+                                  Fluid="true"
+                                  Class="h-100"
+                                  Style="object-fit: contain;"
+                                  Alt="Pro04" />
+                    </div>
+                </MudCarouselItem>
+                <MudCarouselItem Class="py-0" Transition="transition" Color="@Color.Transparent">
+                    <div class="d-flex justify-center align-center" style="height:100%;padding: 8px 0;">
+                        <MudImage Src="/ImgPro/Pro05.png"
+                                  Fluid="true"
+                                  Class="h-100"
+                                  Style="object-fit: contain;"
+                                  Alt="Pro05" />
+                    </div>
+                </MudCarouselItem>
+            </MudCarousel>
+            <MudList>
+                <MudListItem Class="d-flex justify-start">
+                    <MudChip Variant="Variant.Filled"
+                             Color="Color.Primary"
+                             Class="ma-1"
+                             href="https://apipruebaweb.runasp.net/">
+                        Demo
+                    </MudChip>
+                </MudListItem>
+                <MudSpacer/>
+                <MudListItem>
+                    <MudChip Variant="Variant.Outlined"
+                             Color="Color.Primary"
+                             Class="ma-1"
+                             Icon="@Icons.Material.Filled.Code">
+                        C#
+                    </MudChip>
+                    <MudChip Variant="Variant.Outlined"
+                             Color="Color.Primary"
+                             Class="ma-1"
+                             Icon="@Icons.Material.Filled.Code">
+                        SQL Server
+                    </MudChip>
+                    <MudChip Variant="Variant.Outlined"
+                             Color="Color.Primary"
+                             Class="ma-1"
+                             Icon="@Icons.Material.Filled.Code">
+                        BlazorWebAssembly
+                    </MudChip>
+                </MudListItem>
+            </MudList>
+        </MudGrid>
+    </MudPaper>
+    <!-- Sección de Educación -->
+    <MudExpansionPanel Style="background-color: #BDDDE4;" IsExpanded="true">
+            <MudText Typo="Typo.h6" Color="Color.Primary">Formación Académica</MudText>
+            <MudList>
+                <MudListItem>
+                    <MudText Typo="Typo.h6">Bachiller en ingenieria de sistemas</MudText>
+                <MudText Typo="Typo.subtitle2" Color="Color.Primary">UNIVERSIDAD PRIVADA DEL NORTE (2022)</MudText>
+
+                </MudListItem>
+                <MudListItem>
+                <MudText Typo="Typo.h6">Diseño Web con HTML5 + CSS</MudText>
+                <MudText Typo="Typo.subtitle2" Color="Color.Primary"> Fundación telefónica del Perú (2022)</MudText>
+                </MudListItem>
+            <MudListItem>
+                <MudText Typo="Typo.h6">Congreso: Workshop Agilidad y transformación digital</MudText>
+                <MudText Typo="Typo.h6">Metodologías ágiles de desarrollo de software</MudText>
+                <MudText Typo="Typo.subtitle2" Color="Color.Primary"> A&S Consultores, Trujillo, Perú (2019)</MudText>
+            </MudListItem>
+            <MudListItem>
+                <MudText Typo="Typo.h6">Inglés Intermedio</MudText>
+                <MudText Typo="Typo.subtitle2" Color="Color.Primary">Cambridge LMS  UPN (2019)</MudText>
+            </MudListItem>
+            </MudList>
+    </MudExpansionPanel>
+</MudContainer>
+<style>
+    body {
+        background-color: #FFF1D5;
+    }
+
+    .mud-main-content {
+        background-color: inherit;
+    }
+</style>
+@code {
+
+    private Transition transition = Transition.Slide;
+
+    private List<string> skillsCode = new()
+    {
+        "C#", ".NET", "Blazor", "JavaScript", "HTML/CSS",
+        "Sql Server", "Maria DB", "PostgreSQL","GIT", "WebApis",
+        "PWA"
+    };
+}
+@* Palaeta de colores: 
+    https://www.colorhunt.co/palette/9fb3df9ec6f3bddde4fff1d5
+    https://www.colorhunt.co/palette/adb2d4c7d9ddd5e5d5eef1da
+*@
